@@ -16,11 +16,8 @@ app.use(express.json());
 // === CORS CONFIGURATION ===
 const frontendUrl = "https://hackathon-biggards-production.up.railway.app";
 
-app.use(cors({
-  origin: frontendUrl,           // allow only your frontend
-  methods: ["GET","POST","PUT","DELETE","OPTIONS"],
-  credentials: true              // allow cookies if needed
-}));
+app.use(cors());
+app.options("*", cors());
 
 // Routes
 app.use("/api/auth", authRoutes);
