@@ -20,8 +20,7 @@ const Register = () => {
   const handleRegister = async (e) => {
     e.preventDefault();
     try {
-      const response = await API.post("/auth/register", form);
-      alert("Registered successfully! You can now log in.");
+    await API.post("/auth/register", form);      alert("Registered successfully! You can now log in.");
       navigate("/");
     } catch (err) {
       console.error(err);
