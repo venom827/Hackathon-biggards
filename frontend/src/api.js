@@ -1,12 +1,7 @@
-// frontend/src/api.js
 import axios from "axios";
 
-// Hardcoded Railway backend URL
 const API = axios.create({
-  baseURL: "https://hackathon-backend.up.railway.app/api",
+  baseURL: "/api", // relative path to backend
 });
 
-console.log("Backend URL:", API.defaults.baseURL);
-
 export default API;
-
