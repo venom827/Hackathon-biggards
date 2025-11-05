@@ -12,15 +12,17 @@ connectDB();
 
 const app = express();
 
+// JSON parsing middleware
+app.use(express.json());
+
+// CORS configuration
 const corsOptions = {
-  origin: "https://hackathon-biggards-production.up.railway.app", 
+  origin: "https://hackathon-biggards-production.up.railway.app", // your frontend URL
   methods: ["GET", "POST", "PUT", "DELETE"],
-  credentials: true, 
+  credentials: true, // only needed if using cookies
 };
 
 app.use(cors(corsOptions));
-
-app.use(express.json());
 
 // Routes
 app.use("/api/auth", authRoutes);
